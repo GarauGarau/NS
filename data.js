@@ -9,24 +9,24 @@ const researchData = {
     publications: [
         { 
             title: "Publication Title One: A Minimalist Analysis of Web Aesthetics (2024)", 
-            description: "Brief description of Publication One: This work explores the evolution of minimalist web design and the impact of 'dark mode' aesthetics on user experience and accessibility. Comment: This is the first peer-reviewed publication. Published in the Journal of Digital Arts.", 
+            description: "xxx", 
             draftLink: "https://link-to-publication-one.com" 
         },
         { 
             title: "Computational Theories of the Blinking Cursor: History and Future", 
-            description: "Brief description of Publication Two: An in-depth study of the symbolic significance of the block cursor and its persistence in the modern user interface as an element of attention and interaction. Comment: Important work on Human-Computer Interaction.", 
+            description: "xxx", 
             draftLink: "https://link-to-publication-two.com" 
         },
     ],
     workingPapers: [
         { 
-            title: "Working Paper Alpha: Single-File Architectures for Web Projects (Draft)", 
-            description: "Description of Working Paper Alpha: Research on how 'single-file' architectures can simplify development, reduce setup time, and improve prototype portability. Comment: Currently under review and update. Will be presented at Conference X.", 
+        	title: "Working Paper Alpha: Single-File Architectures for Web Projects (Draft)", 
+            description: "xxx", 
             draftLink: "https://link-to-working-paper-alpha.com" 
         },
         { 
             title: "Working Paper Beta: The Impact of Monospace Fonts on Learning", 
-            description: "Description of Working Paper Beta: Preliminary research examining whether and how the use of fixed-width (monospace) fonts in educational materials can influence concentration and memorization in programming students.", 
+            description: "xxx", 
             draftLink: "https://link-to-working-paper-beta.com" 
         },
     ],
@@ -38,7 +38,13 @@ const researchData = {
         },
         { 
             title: "Labour Market Dynamics - Evidence from Administrative Data", 
-			authors: `Silvia Balia, <a href="https://sites.google.com/site/giovannisulis/" target="_blank" class="border-b border-dotted border-gray-500 hover:text-yellow-600 hover:border-yellow-600 transition-colors">Giovanni Sulis</a> and Daniela Sonedda`,            description: "This paper investigates how unexpected adverse labor market conditions affect short-term worker mobility. Using Italian administrative data, we leverage the government-mandated shutdown of non-essential sectors during the COVID-19 pandemic, implemented in a context where layoffs were not allowed, in order to study workers mobility decisions. Applying a difference-in-differences approach, we document how the restrictions significantly increased transitions from employment to unemployment (EU), with no notable impact on employer-to-employer (EE) or unemployment-to-employment (UE) moves. These effects vary by occupation and demographic groups: workers in physically demanding jobs experienced higher EU rates and somewhat slower re-employment (UE), while workers in occupations with remote work potential were less likely to move into voluntary unemployment. Vulnerable workers, such as those with limited experience in the labor market and lower levels of education, faced higher rates of transitioning into unemployment.", 
+			authors: `Silvia Balia, <a href="https://sites.google.com/site/giovannisulis/" target="_blank" class="border-b border-dotted border-gray-500 hover:text-yellow-600 hover:border-yellow-600 transition-colors">Giovanni Sulis</a> and Daniela Sonedda`,            
+			description: "This paper investigates how unexpected adverse labor market conditions affect short-term worker mobility. Using Italian administrative data, we leverage the government-mandated shutdown of non-essential sectors during the COVID-19 pandemic, implemented in a context where layoffs were not allowed, in order to study workers mobility decisions. Applying a difference-in-differences approach, we document how the restrictions significantly increased transitions from employment to unemployment (EU), with no notable impact on employer-to-employer (EE) or unemployment-to-employment (UE) moves. These effects vary by occupation and demographic groups: workers in physically demanding jobs experienced higher EU rates and somewhat slower re-employment (UE), while workers in occupations with remote work potential were less likely to move into voluntary unemployment. Vulnerable workers, such as those with limited experience in the labor market and lower levels of education, faced higher rates of transitioning into unemployment.", 
+        },
+		        { 
+            title: "Risk Aversion and Strategic Decision-Making: Evidence from University Housing Allocation", 
+			authors: `<a href="https://sites.google.com/site/fabioangei/" target="_blank" class="border-b border-dotted border-gray-500 hover:text-yellow-600 hover:border-yellow-600 transition-colors">Fabio Angei</a>`,            
+			description: "This paper investigates how unexpected adverse labor market conditions affect short-term worker mobility. Using Italian administrative data, we leverage the government-mandated shutdown of non-essential sectors during the COVID-19 pandemic, implemented in a context where layoffs were not allowed, in order to study workers mobility decisions. Applying a difference-in-differences approach, we document how the restrictions significantly increased transitions from employment to unemployment (EU), with no notable impact on employer-to-employer (EE) or unemployment-to-employment (UE) moves. These effects vary by occupation and demographic groups: workers in physically demanding jobs experienced higher EU rates and somewhat slower re-employment (UE), while workers in occupations with remote work potential were less likely to move into voluntary unemployment. Vulnerable workers, such as those with limited experience in the labor market and lower levels of education, faced higher rates of transitioning into unemployment.", 
         },
     ]
 };
