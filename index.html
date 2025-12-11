@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Site | Home</title>
+    
+    <!-- Loading Lucide icons (Font Awesome alternative) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Compiled Tailwind CSS + Custom Styles -->
+    <link rel="stylesheet" href="dist/styles.css">
+</head>
+
+<body class="p-4 md:p-8">
+
+    <!-- Main Container -->
+    <div id="app" class="max-w-4xl mx-auto w-full">
+
+        <!-- ============================================== -->
+        <!-- HEADER / NAVIGATION SECTION -->
+        <!-- ============================================== -->
+        <header class="mb-12 border-b border-black pb-4">
+            <nav class="flex justify-between items-center text-sm md:text-base">
+                <a href="#home" id="nav-home" class="font-bold tracking-wider hover:text-yellow-600 transition-colors">./HOME</a>
+                <div class="space-x-4 md:space-x-8">
+                    <a href="#research" id="nav-research" class="hover:text-yellow-600 transition-colors">./RESEARCH</a>
+                    <a href="#cv" id="nav-cv" class="hover:text-yellow-600 transition-colors">./CV</a>
+                </div>
+            </nav>
+        </header>
+
+        <!-- ============================================== -->
+        <!-- HOME PAGE SECTION -->
+        <!-- ============================================== -->
+        <main id="home-page" class="page min-h-[60vh]">
+            <!-- Layout: Flex colonna su mobile, Grid 3 colonne su desktop -->
+            <div class="flex flex-col gap-4 md:grid md:grid-cols-3 md:gap-16">
+                
+                <!-- Photo Column -->
+                <div class="max-w-xs md:col-span-1 md:min-w-[256px] md:max-w-[256px] flex-shrink-0 mt-8 md:mt-0 
+                            order-first md:order-first md:sticky md:top-20 md:self-start 
+                            mx-0 mb-4 md:mb-0">
+                    <div class="w-full aspect-square bg-black border border-black p-1 shadow-lg">
+                        <!-- Image Placeholder: Use a link to your real photo -->
+                        <img src="avatar.png" 
+                             alt="Personal photo of [Alessio Garau]" 
+                             class="object-cover w-full h-full grayscale hover:grayscale-0 transition-all duration-300">
+                    </div>
+                    <p class="text-xs text-center mt-2 text-gray-500"><> alessiogarau22@gmail.it <></p>
+					<p class="text-xs text-center mt-2 text-gray-500"><> alessio.garau@unica.it <></p>
+                </div>
+
+                <!-- Name and Bio Column -->
+                <div class="md:col-span-2 order-last md:order-last">
+                    <!-- Typewriter Effect -->
+                    <h1 class="text-3xl md:text-5xl font-extrabold mb-2 whitespace-nowrap text-left">
+                        <span id="typing-text"></span><span id="cursor" class="blinking-cursor"></span>
+                    </h1>
+
+                    <!-- Brief Description -->
+                    <p class="text-lg mb-8 max-w-lg leading-relaxed">
+                        Welcome! I am a PhD Candidate in Economics (expected defense Feb 2026) at the University of Cagliari. My interests lie mostly in causal inference and machine learning, with a specific focus on using text as data in economic applications.
+                    </p>
+
+                    <!-- Social & Contact Links -->
+                    <div class="flex flex-wrap gap-x-6 gap-y-4 text-1xl">
+                        <a href="https://github.com/GarauGarau" target="_blank" aria-label="GitHub" class="hover:text-yellow-600 flex items-center gap-2">
+                            <i data-lucide="github" class="w-2 h-2"></i> GitHub
+                        </a>
+                        <a href="https://www.linkedin.com/in/alessio-garau-075693150/" target="_blank" aria-label="LinkedIn" class="hover:text-yellow-600 flex items-center gap-2">
+                            <i data-lucide="linkedin" class="w-2 h-2"></i> LinkedIn
+                        </a>
+                        <a href="https://x.com/alessiogarau22" target="_blank" aria-label="Twitter" class="hover:text-yellow-600 flex items-center gap-2">
+                            <i data-lucide="twitter" class="w-2 h-2"></i> X (Twitter)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- ============================================== -->
+        <!-- RESEARCH PAGE SECTION -->
+        <!-- ============================================== -->
+        <main id="research-page" class="page min-h-[60vh] hidden">
+            <h2 class="text-3xl font-bold mb-10 border-b border-gray-300 pb-3">Research & Works</h2>
+			
+            <section class="mb-12">
+                <h3 class="text-xl md:text-2xl font-semibold mb-6">./ SELECTED WORK IN PROGRESS</h3>
+                <div id="work-in-progress-list" class="space-y-4">
+                    <!-- Content will be injected by JavaScript -->
+                </div>
+            </section>
+        </main>
+        
+        <!-- ============================================== -->
+        <!-- CV PAGE SECTION -->
+        <!-- ============================================== -->
+		<main id="cv-page" class="page min-h-[60vh] hidden">
+			
+			<div class="flex justify-between items-end border-b border-black pb-3 mb-10">
+				<h2 class="text-3xl font-bold">Curriculum Vitae</h2>
+				<a href="https://drive.google.com/file/d/1uzkgFOnq0Mghwe9dMDFT7MybtASt8I3l/view?usp=drive_link" target="_blank" 
+				   class="inline-flex items-center text-sm px-3 py-1 bg-black text-white 
+						  font-semibold border border-black rounded-sm shadow-md 
+						  transition-all duration-300 hover:bg-yellow-600 hover:text-black hover:border-yellow-600">
+					<i data-lucide="download" class="w-4 h-4 mr-1"></i> 
+					Download PDF
+				</a>
+			</div>
+
+			<section class="mb-10">
+				<h3 class="text-xl md:text-2xl font-semibold mb-4">./ CONTACTS</h3>
+				<div class="space-y-1 text-base">
+					<p><strong>Name:</strong> Alessio Garau</p>
+					<p><strong>Email:</strong> <a href="mailto:alessiogarau22@gmail.com" class="hover:text-yellow-600">alessiogarau22@gmail.com</a></p>
+					<p><strong>Website:</strong> <a href="https://www.alessiogarau.me/" target="_blank" class="hover:text-yellow-600">alessiogarau.me</a></p>
+				</div>
+			</section>
+
+			<section class="mb-10">
+				<h3 class="text-xl md:text-2xl font-semibold mb-4">./ EXPERIENCE</h3>
+				<div class="space-y-6">
+					
+					<div class="border-l-2 border-yellow-600 pl-4">
+						<p class="text-lg font-bold">Research Fellow</p>
+						<p class="text-sm italic text-gray-600">University of Cagliari | 10/2025 - Present</p>
+						<p class="text-xs text-gray-500 mt-0.5 mb-2">
+							 Scientific coordinator : <a href="https://www.claudiodeiana.net/" target="_blank" class="underline decoration-yellow-600 hover:text-yellow-600">Claudio Deiana</a>
+						</p>
+						<ul class="list-none text-sm space-y-1">
+							<li><span class="text-yellow-600 font-bold">-></span> Digitalization of historical archives and geospatial matching of 19th-century municipalities.</li>
+							<!-- <li><span class="text-yellow-600 font-bold">-></span> Causal analysis (Diff-in-Diff) on the impact of property rights reforms (<em>Chiudende</em>) on violence and inequality.</li>-->
+						</ul>
+					</div>
+					
+					<div class="border-l-2 border-yellow-600 pl-4">
+						<p class="text-lg font-bold">Research Assistant</p>
+						<p class="text-sm italic text-gray-600">University of Cagliari | 09/2025 - 11/2025</p>
+						<p class="text-xs text-gray-500 mt-0.5 mb-2">
+							 Scientific coordinator : <a href="https://www.marconieddu.net/" target="_blank" class="underline decoration-yellow-600 hover:text-yellow-600">Marco G. Nieddu</a>
+						</p>
+						<ul class="list-none text-sm mt-2 space-y-1">
+							<li><span class="text-yellow-600 font-bold">-></span> Bibliometric analysis using Python and STATA to study technological changes (SCOPUS, Web of Science).</li>
+							<li><span class="text-yellow-600 font-bold">-></span> Automation of data collection, NLP (text embedding), and Causal Analysis.</li>
+						</ul>
+					</div>
+
+					<div class="border-l-2 border-yellow-600 pl-4">
+						<p class="text-lg font-bold">Teaching Assistant - Macroeconomics</p>
+						<p class="text-sm italic text-gray-600">University of Cagliari | 2021 - Present</p>
+						<p class="text-sm mt-1">Undergraduate level</p>
+					</div>
+
+					<div class="border-l-2 border-yellow-600 pl-4">
+						<p class="text-lg font-bold">Teaching Assistant - Data Analysis in Economics</p>
+						<p class="text-sm italic text-gray-600">University of Cagliari | 2024 - Present</p>
+						<p class="text-sm mt-1">Master level</p>
+					</div>
+
+					<div class="border-l-2 border-yellow-600 pl-4">
+						<p class="text-lg font-bold">Teaching Assistant - Microeconomics</p>
+						<p class="text-sm italic text-gray-600">University of Cagliari | 04/2025 - 06/2025</p>
+						<p class="text-sm mt-1">Undergraduate level</p>
+					</div>
+
+					<div class="border-l-2 border-yellow-600 pl-4">
+						<p class="text-lg font-bold">Teaching Assistant - Quantitative Macroeconomics</p>
+						<p class="text-sm italic text-gray-600">University of Cagliari | 2021 - 2022</p>
+						<p class="text-sm mt-1">Master level</p>
+					</div>
+
+					<div class="border-l-2 border-yellow-600 pl-4">
+						<p class="text-lg font-bold">Research Assistant</p>
+						<p class="text-sm italic text-gray-600">LaVoce.info (Remote) | 05/2021 - 09/2021</p>
+						<ul class="list-none text-sm mt-2 space-y-1">
+							<li><span class="text-yellow-600 font-bold">-></span> Research, analysis, and data visualization (Excel, Flourish) for economic journalism.</li>
+						</ul>
+					</div>
+
+					<div class="border-l-2 border-yellow-600 pl-4">
+						<p class="text-lg font-bold">Student Support Assistant</p>
+						<p class="text-sm italic text-gray-600">University of Cagliari | 04/2020 - 08/2020</p>
+						<ul class="list-none text-sm mt-2 space-y-1">
+							<li><span class="text-yellow-600 font-bold">-></span> Academic support for students with disabilities, focusing on Statistics preparation.</li>
+						</ul>
+					</div>
+
+					<div class="border-l-2 border-yellow-600 pl-4">
+						<p class="text-lg font-bold">Research Intern</p>
+						<p class="text-sm italic text-gray-600">CRENOS (Centre for North South Economic Research) | 06/2019 - 07/2019</p>
+						<ul class="list-none text-sm mt-2 space-y-1">
+							<li><span class="text-yellow-600 font-bold">-></span> Collection and processing of socio-economic data; reporting and operational support.</li>
+						</ul>
+					</div>
+
+				</div>
+			</section>
+
+			<section class="mb-10">
+				<h3 class="text-xl md:text-2xl font-semibold mb-4">./ EDUCATION</h3>
+				<div class="space-y-4">
+					<div class="border-l-2 border-yellow-600 pl-4">
+						<p class="text-lg font-bold">PhD in Economics and Business</p>
+						<p class="text-xs text-gray-500 mt-0.5 mb-2">
+						  Supervisors : 
+						  <a href="https://alessiomoro.it/" target="_blank" class="underline decoration-yellow-600 hover:text-yellow-600">Alessio Moro</a>
+						  and 
+						  <a href="https://sites.google.com/site/giovannisulis//" target="_blank" class="underline decoration-yellow-600 hover:text-yellow-600">Giovanni Sulis</a>
+						</p>
+						<p class="text-sm italic text-gray-600">University of Cagliari | 2021 - Present</p>
+					</div>
+					<div class="border-l-2 border-yellow-600 pl-4">
+						<p class="text-lg font-bold">Visiting PhD Student</p>
+						<p class="text-sm italic text-gray-600">CEMFI (Madrid, Spain) | 09/2021 - 02/2022</p>
+					</div>
+					<div class="border-l-2 border-yellow-600 pl-4">
+						<p class="text-lg font-bold">MSc in Economics, Finance and Public Policy</p>
+						<p class="text-sm italic text-gray-600">University of Cagliari | 2019 - 2021</p>
+						<p class="text-sm text-gray-500">Grade: 110/110 cum laude</p>
+					</div>
+					<div class="border-l-2 border-yellow-600 pl-4">
+						<p class="text-lg font-bold">BSc in Economics and Business Management</p>
+						<p class="text-sm italic text-gray-600">University of Cagliari | 2016 - 2019</p>
+						<p class="text-sm text-gray-500">Grade: 110/110 cum laude</p>
+					</div>
+				</div>
+			</section>
+
+		</main>
+            
+			<p class="text-xs text-gray-500 mt-12 border-t border-gray-200 pt-4 text-center">
+                &copy; 2024 Alessio Garau. Built with Vanilla JS & Tailwind.
+            </p>
+        </main> </div> <script src="data.js"></script> 
+    
+    <script src="app.js"></script>
+
+</body>
+</html>

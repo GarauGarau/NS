@@ -1,0 +1,69 @@
+/* ============================================== */
+/* TAILWIND BASE - src/input.css */
+/* ============================================== */
+
+@import "tailwindcss";
+
+/* ============================================== */
+/* CUSTOM STYLES */
+/* ============================================== */
+
+/* Base configuration for the light/terminal theme and font */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap');
+
+:root {
+    /* Colors: Inverted for Black on White */
+    --color-primary: #ffffff; /* WHITE (Background) */
+    --color-secondary: #000000; /* BLACK (Text) */
+    --color-accent: #facc15; /* Yellow subtle accent */
+}
+
+body {
+    font-family: 'IBM Plex Mono', monospace;
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* Adds a subtle texture (simulating CRT/grain effect, black dots on white) */
+    background-image: radial-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    background-size: 4px 4px;
+}
+
+a {
+    transition: color 0.15s ease-in-out;
+}
+
+a:hover {
+    color: var(--color-accent);
+}
+
+/* Style for the blinking cursor (Animation) */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.blinking-cursor {
+    display: inline-block;
+    width: 8px; /* Cursor width */
+    height: 1.2em;
+    background-color: var(--color-secondary); /* Black cursor */
+    margin-left: 4px;
+    animation: blink 0.7s infinite step-end;
+    vertical-align: middle;
+}
+
+/* Transitions for paper expansion/collapse (Research section) */
+.paper-description {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    padding: 0 0.75rem;
+}
+
+.paper-description.expanded {
+    max-height: 500px; /* Large enough to contain the description */
+    padding-top: 0.5rem;
+    padding-bottom: 1.5rem;
+}

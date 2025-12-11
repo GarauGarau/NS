@@ -1,0 +1,21 @@
+{
+  "name": "claude",
+  "version": "1.0.0",
+  "description": "This is a personal portfolio website with a minimalist, terminal-inspired design. The code has been organized into separate files for better maintainability and easier modifications.",
+  "main": "app.js",
+  "scripts": {
+    "build:css": "postcss src/input.css -o dist/styles.css",
+    "watch:css": "postcss src/input.css -o dist/styles.css --watch",
+    "build": "npm run build:css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.17",
+    "autoprefixer": "^10.4.22",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "tailwindcss": "^4.1.17"
+  }
+}
