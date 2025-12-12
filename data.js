@@ -5,6 +5,54 @@
 // --- Data Configuration (Data Modularity) ---
 const APP_NAME = "Alessio Garau"; // Replace with your name
 
+// --- PHOTOGRAPHY DATA ---
+const photographyData = [
+// --- PHOTOGRAPHY DATA ---
+"_R002807.jpg",
+"_R002892.jpg",
+"_R002933.jpg",
+"DJI_0110.jpg",
+"R0002126.jpg",
+"R0002489.jpg",
+"R0002562.jpg",
+"R0002646.jpg",
+"FOTO83442.jpg",
+"aaa1.jpg",
+"aaa2.jpg",
+"DSCF1339.jpg",
+"DSCF6514.jpg",
+"DSCF6705.jpg",
+"FOTO8043.jpg",
+"_R002843.jpg",
+"_R002902.jpg",
+"_R002951.jpg",
+"DSCF0130.jpg",
+"R0002218.jpg",
+"R0002512.jpg",
+"R0002585.jpg",
+"R0002664.jpg",
+"DSCF8034.jpg",
+"aaa3.jpg",
+"aaa4.jpg",
+"DSCF1369.jpg",
+"DSCF6639.jpg",
+"DSCF9106.jpg",
+"_R002865.jpg",
+"_R002913.jpg",
+"_R003038.jpg",
+"DSCF32242.jpg",
+"R0002343.jpg",
+"R0002547.jpg",
+"R0002613.jpg",
+"R0002767.jpg",
+"DSCF8551.jpg",
+"aaa5.jpg",
+"DSCF0683.jpg",
+"DSCF1410.jpg",
+"DSCF6703.jpg",
+"DSCF48213.jpg",
+];
+
 const researchData = {
     publications: [
         { 
@@ -47,3 +95,5 @@ const researchData = {
         },
     ]
 };
+
+

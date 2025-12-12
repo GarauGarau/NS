@@ -24,8 +24,9 @@
             <nav class="flex justify-between items-center text-sm md:text-base">
                 <a href="#home" id="nav-home" class="font-bold tracking-wider hover:text-yellow-600 transition-colors">./HOME</a>
                 <div class="space-x-4 md:space-x-8">
-                    <a href="#research" id="nav-research" class="hover:text-yellow-600 transition-colors">./RESEARCH</a>
-                    <a href="#cv" id="nav-cv" class="hover:text-yellow-600 transition-colors">./CV</a>
+				<a href="#research" id="nav-research" class="hover:text-yellow-600 transition-colors">./RESEARCH</a>
+				<a href="#cv" id="nav-cv" class="hover:text-yellow-600 transition-colors">./CV</a>
+				<a href="#photography" id="nav-photography" class="hover:text-yellow-600 transition-colors">./PHOTOGRAPHY</a>
                 </div>
             </nav>
         </header>
@@ -58,18 +59,24 @@
                 <div class="md:col-span-2 order-last md:order-last">
                     
                     <p class="text-lg mb-8 max-w-lg leading-relaxed">
-                        Welcome! I am a PhD Candidate in Economics (expected defense Feb 2026) at the University of Cagliari. My interests lie mostly in causal inference and machine learning, with a specific focus on using text as data in economic applications.
+						Welcome! I am a PhD Candidate in Economics (expected defense Feb 2026) 
+						at the University of Cagliari. My interests lie mostly in causal 
+						inference and machine learning, with a specific focus on using text as 
+						data in economic applications.<br>
+
+						Among other things, I enjoy taking pictures in my spare time. You can view a 
+						small selection of my shots in the <a href="#photography" class="text-yellow-600 hover:text-yellow-800 transition-colors">Photography</a> section.
                     </p>
 
                     <div class="flex flex-wrap gap-x-6 gap-y-4 text-1xl">
                         <a href="https://github.com/GarauGarau" target="_blank" aria-label="GitHub" class="hover:text-yellow-600 flex items-center gap-2">
-                            <i data-lucide="github" class="w-2 h-2"></i> GitHub
+                            <i data-lucide="github" class="w-3 h-3"></i> GitHub
                         </a>
                         <a href="https://www.linkedin.com/in/alessio-garau-075693150/" target="_blank" aria-label="LinkedIn" class="hover:text-yellow-600 flex items-center gap-2">
-                            <i data-lucide="linkedin" class="w-2 h-2"></i> LinkedIn
+                            <i data-lucide="linkedin" class="w-3 h-3"></i> LinkedIn
                         </a>
                         <a href="https://x.com/alessiogarau22" target="_blank" aria-label="Twitter" class="hover:text-yellow-600 flex items-center gap-2">
-                            <i data-lucide="twitter" class="w-2 h-2"></i> X (Twitter)
+                            <i data-lucide="twitter" class="w-3 h-3"></i> X (Twitter)
                         </a>
                     </div>
                 </div>
@@ -89,7 +96,26 @@
                 </div>
             </section>
         </main>
-        
+		
+		<!-- ============================================== -->
+        <!-- Photos -->
+        <!-- ============================================== -->
+		<main id="photography-page" class="page min-h-[60vh] hidden">
+			<h2 class="text-3xl font-bold mb-4 border-b border-gray-300 pb-3">Photography</h2>
+			<p class="text-gray-600 mb-10">
+				A collection of my photos. Click on any picture to view full size.<br>
+				All images are © Alessio Garau. I am generally happy to allow permission for non-commercial use, but explicit authorization is required. 
+				Please contact me with your request before using any content. 
+			</p>
+			<div id="photo-grid" class="columns-2 md:columns-3 gap-4 space-y-4"></div>
+		</main>
+		<div id="lightbox" class="fixed inset-0 z-50 hidden bg-black/95 flex justify-center items-center p-4" onclick="closeLightbox()">
+			<button class="absolute top-5 right-5 text-white hover:text-yellow-600 transition-colors">
+				<i data-lucide="x" class="w-10 h-10"></i>
+			</button>
+			<img id="lightbox-img" src="" alt="Full screen view" class="max-w-full max-h-full object-contain shadow-2xl">
+		</div>
+	
         <!-- ============================================== -->
         <!-- CV PAGE SECTION -->
         <!-- ============================================== -->
@@ -221,14 +247,11 @@
 
 				</div>
 			</section>
-
 		</main>
-            
 			<p class="text-xs text-gray-500 mt-12 border-t border-gray-200 pt-4 text-center">
                 &copy; 2024 Alessio Garau. Built with Vanilla JS & Tailwind.
             </p>
         </main> </div> <script src="data.js"></script> 
-    
     <script src="app.js"></script>
 
 </body>

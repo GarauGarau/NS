@@ -134,6 +134,113 @@ function loadResearchContent() {
     lucide.createIcons();
 }
 
+/**
+ * Renderizza il mosaico fotografico.
+ */
+/* app.js */
+
+/**
+ * Renderizza il mosaico fotografico (Stile Pinterest/Masonry).
+ */
+function renderPhotography() {
+    const grid = document.getElementById('photo-grid');
+    grid.innerHTML = ''; 
+
+    photographyData.forEach((filename) => {
+        const src = `photos/${filename}`; 
+
+        // Creiamo il div contenitore
+        const wrapper = document.createElement('div');
+        
+        // --- LOGICA MASONRY SEMPLIFICATA ---
+        // break-inside-avoid: impedisce che una foto venga spezzata tra due colonne
+        // mb-4: aggiunge spazio sotto ogni foto
+        wrapper.className = `relative group rounded-sm overflow-hidden mb-4 break-inside-avoid cursor-pointer`;
+        
+        // HTML interno: 
+        // Rimuoviamo 'h-full' e 'object-cover' per lasciare che la foto mantenga 
+        // le sue proporzioni naturali (niente crop).
+        wrapper.innerHTML = `
+            <img src="${src}" 
+                 alt="Photo" 
+                 loading="lazy"
+                 class="w-full h-auto block transition-transform duration-700 group-hover:scale-105">
+            
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <i data-lucide="maximize-2" class="text-white w-8 h-8 opacity-80"></i>
+            </div>
+        `;
+        
+        // Evento Click: Apre il Lightbox
+        wrapper.onclick = () => openLightbox(src);
+        
+        grid.appendChild(wrapper);
+    });
+    
+    // Ricarica le icone Lucide
+    lucide.createIcons();
+}
+
+/**
+ * Apre il Lightbox a tutto schermo
+ */
+function openLightbox(src) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    
+    lightboxImg.src = src;
+    lightbox.classList.remove('hidden');
+    lightbox.classList.add('flex'); // Usa flex per centrare
+    
+    // Disabilita lo scroll della pagina sotto
+    document.body.style.overflow = 'hidden';
+}
+
+/**
+ * Chiude il Lightbox
+ */
+function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    lightbox.classList.add('hidden');
+    lightbox.classList.remove('flex');
+    lightboxImg.src = ''; // Pulisce src
+    
+    // Riabilita lo scroll
+    document.body.style.overflow = 'auto';
+}
+
+/**
+ * Apre il Lightbox a tutto schermo
+ */
+function openLightbox(src) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    
+    lightboxImg.src = src;
+    lightbox.classList.remove('hidden');
+    lightbox.classList.add('flex'); // Usa flex per centrare
+    
+    // Disabilita lo scroll della pagina sotto
+    document.body.style.overflow = 'hidden';
+}
+
+/**
+ * Chiude il Lightbox
+ */
+function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    lightbox.classList.add('hidden');
+    lightbox.classList.remove('flex');
+    lightboxImg.src = ''; // Pulisce src
+    
+    // Riabilita lo scroll
+    document.body.style.overflow = 'auto';
+}
+
 // Global function for paper expansion/collapse
 window.togglePaper = function(id) {
     const descriptionDiv = document.getElementById(id);
@@ -151,6 +258,8 @@ window.togglePaper = function(id) {
 }
 
 
+
+
 // --- Core Functions (Routing Logic) ---
 
 /**
@@ -158,35 +267,41 @@ window.togglePaper = function(id) {
  */
 function handleRouting() {
     const hash = window.location.hash || '#home';
+    
     const homePage = document.getElementById('home-page');
     const researchPage = document.getElementById('research-page');
     const cvPage = document.getElementById('cv-page');
+    const photoPage = document.getElementById('photography-page'); // <--- NUOVO
 
-    // Hides all pages
+    // 1. Nascondi tutto
     homePage.classList.add('hidden');
     researchPage.classList.add('hidden');
     cvPage.classList.add('hidden');
+    photoPage.classList.add('hidden'); // <--- NUOVO
     
-    // Hides the cursor when not on the home page
     document.getElementById('cursor').style.display = 'none';
 
-    // Shows the correct page based on the hash
+    // 2. Mostra la pagina giusta
     if (hash.startsWith('#research')) {
         researchPage.classList.remove('hidden');
         document.title = `${APP_NAME} | Research`;
     } else if (hash.startsWith('#cv')) {
         cvPage.classList.remove('hidden');
         document.title = `${APP_NAME} | CV`;
-        // Ensures icons on CV page are rendered (like download icon)
         lucide.createIcons();
+    } else if (hash.startsWith('#photography')) { // <--- NUOVO BLOCCO
+        photoPage.classList.remove('hidden');
+        document.title = `${APP_NAME} | Photography`;
+        renderPhotography(); // Carica le foto
     } else {
         homePage.classList.remove('hidden');
         document.title = `${APP_NAME} | Home`;
-        // Restarts the typewriter effect (if not already active)
         startTypingEffect(); 
         document.getElementById('cursor').style.display = 'inline-block';
     }
 }
+
+
 
 // --- Initialization ---
 window.addEventListener('hashchange', handleRouting);
