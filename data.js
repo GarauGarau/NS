@@ -91,7 +91,7 @@ const researchData = {
         },
 		        { 
             title: "Risk Aversion and Strategic Decision-Making: Evidence from University Housing Allocation", 
-			authors: `<a href="https://sites.google.com/site/fabioangei/" target="_blank" class="border-b border-dotted border-gray-500 hover:text-yellow-600 hover:border-yellow-600 transition-colors">Fabio Angei</a>`,            
+			authors: `<a href="https://sites.google.com/view/fabioangei/home" target="_blank" class="border-b border-dotted border-gray-500 hover:text-yellow-600 hover:border-yellow-600 transition-colors">Fabio Angei</a>`,            
         },
     ]
 };
