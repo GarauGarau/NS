@@ -54,7 +54,6 @@ function renderPaperItem(paper, index) {
            </div>` 
         : '';
 
-    // --- NUOVA LOGICA ---
     // Genera l'HTML del link SOLO se paper.draftLink esiste
     const linkHtml = paper.draftLink 
         ? `<p class="pt-4 text-black">
@@ -63,27 +62,49 @@ function renderPaperItem(paper, index) {
                     <i data-lucide="external-link" class="w-3 h-3 inline-block ml-1"></i>
                 </a>
            </p>`
-        : ''; // Altrimenti stringa vuota
-    // --------------------
+        : '';
+
+    // --- LOGICA MODIFICATA ---
+    
+    // Controlliamo se c'è "contenuto espandibile". 
+    // Consideriamo contenuto valido se c'è una descrizione O se c'è un link (poiché il link è nel box nascosto).
+    const hasContent = (paper.description && paper.description.trim().length > 0) || paper.draftLink;
+
+    // Se c'è contenuto, il cursore diventa una mano (pointer), altrimenti default
+    const cursorClass = hasContent ? 'cursor-pointer' : '';
+    
+    // Se c'è contenuto, aggiungiamo l'evento onclick, altrimenti stringa vuota
+    const clickEvent = hasContent ? `onclick="togglePaper('${id}')"` : '';
+
+    // Gestione icona [+]
+    // Se c'è contenuto: mostriamo [+].
+    // Se NON c'è contenuto: mostriamo uno span vuoto (w-4) per mantenere l'allineamento del testo con gli altri paper.
+    const iconHtml = hasContent
+        ? `<span id="icon-${id}" class="inline-block w-4 text-yellow-600 font-bold select-none transition-transform duration-300 transform translate-x-0 mr-2">[+]</span>`
+        : `<span class="inline-block w-4 mr-2"></span>`;
+
+    // Generiamo il div della descrizione solo se c'è contenuto
+    const descriptionDiv = hasContent
+        ? `<div id="${id}" class="paper-description text-xs text-gray-600 ml-6">
+                ${paper.description || ''}
+                ${linkHtml}
+           </div>`
+        : '';
+
+    // -------------------------
 
     return `
         <div class="border-b border-gray-200 pb-2">
-            <div class="flex items-start justify-between cursor-pointer" onclick="togglePaper('${id}')">
+            <div class="flex items-start justify-between ${cursorClass}" ${clickEvent}>
                 <p class="text-sm md:text-base hover:text-yellow-600 transition-colors flex-1 pr-4">
-                    <span id="icon-${id}" class="inline-block w-4 text-yellow-600 font-bold select-none transition-transform duration-300 transform translate-x-0 mr-2">[+]</span> 
+                    ${iconHtml}
                     ${paper.title}
                 </p>
             </div>
             
             ${authorsHtml}
 
-            <div id="${id}" class="paper-description text-xs text-gray-600 ml-6">
-                
-                ${paper.description}
-                
-                ${linkHtml}
-
-            </div>
+            ${descriptionDiv}
         </div>
     `;
 }
@@ -93,7 +114,7 @@ function renderPaperItem(paper, index) {
  * Injects paper data into the HTML.
  */
 function loadResearchContent() {
-    // 1. Commenta le variabili delle sezioni che non usi più
+    // 1. Commento le variabili delle sezioni che non uso più
     // const pubList = document.getElementById('publications-list');
     // const workPList = document.getElementById('working-papers-list');
     
@@ -104,7 +125,7 @@ function loadResearchContent() {
     // pubList.innerHTML = researchData.publications.map(renderPaperItem).join('');
     // workPList.innerHTML = researchData.workingPapers.map((p, i) => renderPaperItem(p, i + researchData.publications.length)).join('');
     
-    // 3. Modifica l'indice per far partire i colori o gli ID da zero (opzionale, ma più pulito)
+    // 3. Modifico l'indice per far partire i colori o gli ID da zero (opzionale, ma più pulito)
     // Prima era: i + researchData.publications.length + researchData.workingPapers.length
     // Ora puoi mettere semplicemente: (p, i)
     wipList.innerHTML = researchData.workInProgress.map((p, i) => renderPaperItem(p, i)).join('');
