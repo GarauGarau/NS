@@ -265,19 +265,21 @@ window.togglePaper = function(id) {
 /**
  * Handles URL hash-based routing.
  */
+/* In app.js */
+
 function handleRouting() {
     const hash = window.location.hash || '#home';
     
     const homePage = document.getElementById('home-page');
     const researchPage = document.getElementById('research-page');
     const cvPage = document.getElementById('cv-page');
-    const photoPage = document.getElementById('photography-page'); // <--- NUOVO
+    const photoPage = document.getElementById('photography-page');
 
     // 1. Nascondi tutto
     homePage.classList.add('hidden');
     researchPage.classList.add('hidden');
     cvPage.classList.add('hidden');
-    photoPage.classList.add('hidden'); // <--- NUOVO
+    photoPage.classList.add('hidden');
     
     document.getElementById('cursor').style.display = 'none';
 
@@ -289,18 +291,27 @@ function handleRouting() {
         cvPage.classList.remove('hidden');
         document.title = `${APP_NAME} | CV`;
         lucide.createIcons();
-    } else if (hash.startsWith('#photography')) { // <--- NUOVO BLOCCO
+    } else if (hash.startsWith('#photography')) {
         photoPage.classList.remove('hidden');
         document.title = `${APP_NAME} | Photography`;
-        renderPhotography(); // Carica le foto
+        renderPhotography();
     } else {
         homePage.classList.remove('hidden');
         document.title = `${APP_NAME} | Home`;
         startTypingEffect(); 
         document.getElementById('cursor').style.display = 'inline-block';
     }
-}
 
+    // --- NUOVO BLOCCO PER ANALYTICS ---
+    // Invia manualmente la visualizzazione di pagina a Google
+    if (typeof gtag === 'function') {
+        gtag('event', 'page_view', {
+            page_title: document.title,
+            page_location: window.location.href,
+            page_path: hash // Registra es: /#research invece di /
+        });
+    }
+}
 
 
 // --- Initialization ---
