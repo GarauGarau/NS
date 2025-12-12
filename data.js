@@ -3,11 +3,9 @@
 /* ============================================== */
 
 // --- Data Configuration (Data Modularity) ---
-const APP_NAME = "Alessio Garau"; // Replace with your name
+const APP_NAME = "Alessio Garau"; 
 
-// --- PHOTOGRAPHY DATA ---
 const photographyData = [
-// --- PHOTOGRAPHY DATA ---
 "_R002807.jpg",
 "_R002892.jpg",
 "_R002933.jpg",

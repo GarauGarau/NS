@@ -253,9 +253,6 @@ window.togglePaper = function(id) {
     }
 }
 
-
-
-
 // --- Core Functions (Routing Logic) ---
 
 /**
