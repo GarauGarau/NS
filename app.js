@@ -14,12 +14,12 @@ function startTypingEffect() {
     let i = 0;
     let speed = 200;
 
-    // --- MODIFICA QUI L'ALTEZZA DEL CURSORE ---
+    //      --- ALTEZZA DEL CURSORE ---
     // 1. Rende l'elemento ridimensionabile
     cursorElement.style.display = 'inline-block'; 
-    // 2. Imposta l'altezza desiderata (es. 20px, o 80% della riga)
+    // 2. Imposta l'altezza desiderata
     cursorElement.style.height = '40px'; 
-    // 3. (Opzionale) Allinea il cursore verticalmente se appare disallineato
+    // 3. Allinea il cursore verticalmente se appare disallineato
     cursorElement.style.verticalAlign = 'bottom'; 
     // ------------------------------------------
 
@@ -121,7 +121,7 @@ function loadResearchContent() {
     // Questa la teniamo
     const wipList = document.getElementById('work-in-progress-list');
 
-    // 2. Commenta le righe che iniettano l'HTML
+    // 2. Commento le righe che iniettano l'HTML
     // pubList.innerHTML = researchData.publications.map(renderPaperItem).join('');
     // workPList.innerHTML = researchData.workingPapers.map((p, i) => renderPaperItem(p, i + researchData.publications.length)).join('');
     
@@ -134,10 +134,6 @@ function loadResearchContent() {
     lucide.createIcons();
 }
 
-/**
- * Renderizza il mosaico fotografico.
- */
-/* app.js */
 
 /**
  * Renderizza il mosaico fotografico (Stile Pinterest/Masonry).
