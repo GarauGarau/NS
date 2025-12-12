@@ -44,7 +44,6 @@ const researchData = {
 		        { 
             title: "Risk Aversion and Strategic Decision-Making: Evidence from University Housing Allocation", 
 			authors: `<a href="https://sites.google.com/site/fabioangei/" target="_blank" class="border-b border-dotted border-gray-500 hover:text-yellow-600 hover:border-yellow-600 transition-colors">Fabio Angei</a>`,            
-			description: "This paper investigates how unexpected adverse labor market conditions affect short-term worker mobility. Using Italian administrative data, we leverage the government-mandated shutdown of non-essential sectors during the COVID-19 pandemic, implemented in a context where layoffs were not allowed, in order to study workers mobility decisions. Applying a difference-in-differences approach, we document how the restrictions significantly increased transitions from employment to unemployment (EU), with no notable impact on employer-to-employer (EE) or unemployment-to-employment (UE) moves. These effects vary by occupation and demographic groups: workers in physically demanding jobs experienced higher EU rates and somewhat slower re-employment (UE), while workers in occupations with remote work potential were less likely to move into voluntary unemployment. Vulnerable workers, such as those with limited experience in the labor market and lower levels of education, faced higher rates of transitioning into unemployment.", 
         },
     ]
 };
