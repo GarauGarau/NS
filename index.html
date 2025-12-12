@@ -34,36 +34,33 @@
         <!-- HOME PAGE SECTION -->
         <!-- ============================================== -->
         <main id="home-page" class="page min-h-[60vh]">
-            <!-- Layout: Flex colonna su mobile, Grid 3 colonne su desktop -->
+            
+            <div class="w-full mb-8">
+                <h1 class="text-3xl md:text-5xl font-extrabold mb-2 whitespace-nowrap text-left">
+                    <span id="typing-text"></span><span id="cursor" class="blinking-cursor"></span>
+                </h1>
+            </div>
+
             <div class="flex flex-col gap-4 md:grid md:grid-cols-3 md:gap-16">
                 
-                <!-- Photo Column -->
-                <div class="max-w-xs md:col-span-1 md:min-w-[256px] md:max-w-[256px] flex-shrink-0 mt-8 md:mt-0 
+                <div class="max-w-xs md:col-span-1 md:min-w-[256px] md:max-w-[256px] flex-shrink-0 mt-0 md:mt-0 
                             order-first md:order-first md:sticky md:top-20 md:self-start 
                             mx-0 mb-4 md:mb-0">
                     <div class="w-full aspect-square bg-black border border-black p-1 shadow-lg">
-                        <!-- Image Placeholder: Use a link to your real photo -->
                         <img src="avatar.png" 
                              alt="Personal photo of [Alessio Garau]" 
                              class="object-cover w-full h-full grayscale hover:grayscale-0 transition-all duration-300">
                     </div>
                     <p class="text-xs text-center mt-2 text-gray-500"><> alessiogarau22@gmail.it <></p>
-					<p class="text-xs text-center mt-2 text-gray-500"><> alessio.garau@unica.it <></p>
+                    <p class="text-xs text-center mt-2 text-gray-500"><> alessio.garau@unica.it <></p>
                 </div>
 
-                <!-- Name and Bio Column -->
                 <div class="md:col-span-2 order-last md:order-last">
-                    <!-- Typewriter Effect -->
-                    <h1 class="text-3xl md:text-5xl font-extrabold mb-2 whitespace-nowrap text-left">
-                        <span id="typing-text"></span><span id="cursor" class="blinking-cursor"></span>
-                    </h1>
-
-                    <!-- Brief Description -->
+                    
                     <p class="text-lg mb-8 max-w-lg leading-relaxed">
                         Welcome! I am a PhD Candidate in Economics (expected defense Feb 2026) at the University of Cagliari. My interests lie mostly in causal inference and machine learning, with a specific focus on using text as data in economic applications.
                     </p>
 
-                    <!-- Social & Contact Links -->
                     <div class="flex flex-wrap gap-x-6 gap-y-4 text-1xl">
                         <a href="https://github.com/GarauGarau" target="_blank" aria-label="GitHub" class="hover:text-yellow-600 flex items-center gap-2">
                             <i data-lucide="github" class="w-2 h-2"></i> GitHub
